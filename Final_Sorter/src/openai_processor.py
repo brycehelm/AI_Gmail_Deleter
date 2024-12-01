@@ -110,7 +110,7 @@ class OpenAIProcessor:
                 task = client.chat.completions.create(
                     model=self.model,
                     messages=[
-                        {"role": "system", "content": "You are an email retention assistant. Respond with valid JSON only."},
+                        {"role": "system", "content": "You are an email retention assistant expert. Respond with valid JSON only."},
                         {"role": "user", "content": prompt}
                     ],
                     response_format={"type": "json_object"}
@@ -181,15 +181,17 @@ Body:
 
 {chr(10).join(email_list)}
 
-Analysis principles:
-1. RETAIN if there are attachments, calendar invites, or future events/deadlines
-2. Consider sender importance and contact frequency
-3. Evaluate ongoing discussion/project context
-4. Delete promotional/social emails unless they contain:
-   - Purchase/signup evidence
-   - Personal relevance
-   - Future reference value
-5. Be cautious - keep if uncertain
+Act as an intelligent email assistant to organize and retain emails carefully. Your goal is to ensure no potentially important emails are lost, especially those that may hold value or be needed in the future. Always err on the side of caution, keeping emails unless their irrelevance is absolutely certain. Use the following principles:
+
+1) Retain emails with reciepts, attachments, calendar invites, or any indication of future events, actions, or deadlines.
+
+2) Focus on context by assessing the sender's identity and frequency of contact (e.g., prioritize emails from colleagues, clients, or frequently interacted senders).
+
+3) Evaluate thread history to understand if the email is part of an ongoing discussion or project and keep it if it contributes context or continuity.
+
+4) Ensure your process mimics human judgment and prioritization, keeping the user's potential future needs in mind at all times."
+
+
 
 Return ONLY a JSON object in this format:
 {{
