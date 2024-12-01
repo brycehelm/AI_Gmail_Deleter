@@ -1,0 +1,9 @@
+beautifulsoup4==4.12.3
+google-api-python-client==2.154.0
+google-auth-oauthlib==1.2.1
+openai==1.55.3
+protobuf==5.29.0
+python-dotenv==1.0.1
+tiktoken==0.8.0
+colorama==0.4.6
+google-auth==2.27.0
