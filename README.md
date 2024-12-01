@@ -47,7 +47,7 @@ pip install -r requirements.txt
    - Create OAuth 2.0 credentials
    - Be sure to add your own email to the "Test Users" group under "Audience" in the Google Cloud Console 
    - Download credentials and save as `credentials/credentials.json`
-T
+
 ## Usage
 
 Run the script:
